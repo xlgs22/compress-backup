@@ -1,0 +1,45 @@
+{
+    "name": "compress-backup",
+    "displayName": "Compress Backup",
+    "description": "一键压缩备份文件夹",
+    "version": "0.0.1",
+    "publisher": "yourname",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourname/compress-backup"
+    },
+    "engines": {
+        "vscode": "^1.95.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:compress-backup.compressFolder"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "compress-backup.compressFolder",
+                "title": "$(file-zip) 压缩备份",
+                "category": "File"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "explorerResourceIsFolder",
+                    "command": "compress-backup.compressFolder",
+                    "group": "7_modification@1"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+} 
